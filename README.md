@@ -2,6 +2,8 @@
 
 #System must have maven installed
 
+git clone <url>
+
 The project is builed to run on linux flatform
 
 #How To Run
