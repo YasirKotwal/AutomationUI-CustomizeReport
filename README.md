@@ -2,7 +2,7 @@
 
 #System must have maven installed
 
-git clone <url>
+  git clone <https://github.com/YasirKotwal/QuickFuseAutomation.git>
 
 The project is builed to run on linux flatform
 
