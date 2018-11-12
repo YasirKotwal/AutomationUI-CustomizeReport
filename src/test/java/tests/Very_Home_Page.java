@@ -2,7 +2,6 @@ package tests;
 
 import java.awt.AWTException;
 
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
@@ -50,4 +49,3 @@ public class Very_Home_Page extends DriverManager {
 	}
 
 }
-

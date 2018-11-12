@@ -5,6 +5,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
@@ -100,20 +101,23 @@ public class HomePage extends DriverManager {
 	WebElement start;
 
 	@FindBy(xpath = "//div[@id='module-2']//*[@class='syn-receptor ui-droppable syn-receptor-north ui-draggable syn-receptor-draggable']")
+	// @FindBy(xpath = "//*[@id=1module-2']/div[1]/div[2]/div/div[3]")
 	WebElement sendSMS;
 
-	@FindBy(xpath = "//div[@id='module-1']//*[@class='syn-node syn-node-attached-e ui-draggable syn-node-active']")
+	// @FindBy(xpath = "//div[@id='module-1']//*[@class='syn-node
+	// syn-node-attached-e ui-draggable syn-node-active']")
+	@FindBy(xpath = "//div[@id='module-2']//*[@class='syn-node syn-node-attached-e ui-draggable syn-node-active']")
 	WebElement sendSMStoEmail;
 
-	@FindBy(xpath = "//div[@id='module-2']//*[@class='syn-receptor ui-droppable syn-receptor-north ui-draggable syn-receptor-draggable']")
+	@FindBy(xpath = "//div[@id='module-3']//*[@class='syn-receptor ui-droppable syn-receptor-north ui-draggable syn-receptor-draggable']")
 	WebElement sendEmail;
 
-	// Hangup
-	@FindBy(xpath = "//div[@id='module-4']//*[@class='syn-receptor ui-droppable syn-receptor-north ui-draggable syn-receptor-draggable']")
-	WebElement hangup1;
-
-	@FindBy(xpath = "//div[@id='module-3']//*[@class='syn-node syn-node-attached-w ui-draggable']")
+	@FindBy(xpath = "//div[@id='module-3']//*[@class='syn-node syn-node-attached-w ui-draggable syn-node-active']")
 	WebElement Mailtohangup1;
+
+	// Hangup
+	@FindBy(xpath = "//div[@id='module-5']//*[@class='syn-receptor ui-droppable syn-receptor-north ui-draggable syn-receptor-draggable']")
+	WebElement hangup1;
 
 	@FindBy(xpath = "//div[@id='module-3']//*[@class='syn-node syn-node-attached-e ui-draggable syn-node-active']")
 	WebElement senMailhangup2;
@@ -121,11 +125,11 @@ public class HomePage extends DriverManager {
 	@FindBy(xpath = "//div[@id='module-6']//*[@class='syn-receptor ui-droppable syn-receptor-north ui-draggable syn-receptor-draggable']")
 	WebElement hangup2;
 
-	@FindBy(xpath = "//div[@id='module-2']//*[@class='syn-node syn-node-attached-w ui-draggable syn-node-active']")
-	WebElement sendSMSHungup1;
+	@FindBy(xpath = "//div[@id='module-4']//*[@class='syn-receptor ui-droppable syn-receptor-north ui-draggable syn-receptor-draggable']")
+	WebElement hangup3;
 
 	@FindBy(xpath = "//div[@id='module-2']//*[@class='syn-node syn-node-attached-w ui-draggable syn-node-active']")
-	WebElement hangup3;
+	WebElement sendSMSHungup1;
 
 	public HomePage() {
 		PageFactory.initElements(driver, this);
@@ -215,14 +219,76 @@ public class HomePage extends DriverManager {
 	public void connectWidgets() throws InterruptedException, AWTException {
 		Robot robot = new Robot();
 		robot.setAutoDelay(50);
-		Actions action = new Actions(driver);
-		action.dragAndDrop(start, sendSMS).build().perform();
-		System.out.println("Next Line");
-		action.dragAndDrop(Mailtohangup1, hangup1).build().perform();
-		action.dragAndDrop(senMailhangup2, hangup2).build().perform();
-		action.dragAndDrop(sendSMStoEmail, sendEmail).build().perform();
-		action.dragAndDrop(sendSMSHungup1, hangup3).build().perform();
 
+		WebElement LocatorFrom = start;
+		WebElement LocatorTo = sendSMS;
+		String xto = Integer.toString(LocatorTo.getLocation().x);
+		String yto = Integer.toString(LocatorTo.getLocation().y);
+		((JavascriptExecutor) driver).executeScript(
+				"function simulate(f,c,d,e){var b,a=null;for(b in eventMatchers)if(eventMatchers[b].test(c)){a=b;break}if(!a)return!1;document.createEvent?(b=document.createEvent(a),a==\"HTMLEvents\"?b.initEvent(c,!0,!0):b.initMouseEvent(c,!0,!0,document.defaultView,0,d,e,d,e,!1,!1,!1,!1,0,null),f.dispatchEvent(b)):(a=document.createEventObject(),a.detail=0,a.screenX=d,a.screenY=e,a.clientX=d,a.clientY=e,a.ctrlKey=!1,a.altKey=!1,a.shiftKey=!1,a.metaKey=!1,a.button=1,f.fireEvent(\"on\"+c,a));return!0} var eventMatchers={HTMLEvents:/^(?:load|unload|abort|error|select|change|submit|reset|focus|blur|resize|scroll)$/,MouseEvents:/^(?:click|dblclick|mouse(?:down|up|over|move|out))$/}; "
+						+ "simulate(arguments[0],\"mousedown\",0,0); simulate(arguments[0],\"mousemove\",arguments[1],arguments[2]); simulate(arguments[0],\"mouseup\",arguments[1],arguments[2]); ",
+				LocatorFrom, xto, yto);
+		System.out.println("Start to sms widget connected");
+
+		WebElement LocatorFrom1 = sendSMStoEmail;
+		WebElement LocatorTo1 = sendEmail;
+		String x1to = Integer.toString(LocatorTo1.getLocation().x);
+		String y1to = Integer.toString(LocatorTo1.getLocation().y);
+		((JavascriptExecutor) driver).executeScript(
+				"function simulate(f,c,d,e){var b,a=null;for(b in eventMatchers)if(eventMatchers[b].test(c)){a=b;break}if(!a)return!1;document.createEvent?(b=document.createEvent(a),a==\"HTMLEvents\"?b.initEvent(c,!0,!0):b.initMouseEvent(c,!0,!0,document.defaultView,0,d,e,d,e,!1,!1,!1,!1,0,null),f.dispatchEvent(b)):(a=document.createEventObject(),a.detail=0,a.screenX=d,a.screenY=e,a.clientX=d,a.clientY=e,a.ctrlKey=!1,a.altKey=!1,a.shiftKey=!1,a.metaKey=!1,a.button=1,f.fireEvent(\"on\"+c,a));return!0} var eventMatchers={HTMLEvents:/^(?:load|unload|abort|error|select|change|submit|reset|focus|blur|resize|scroll)$/,MouseEvents:/^(?:click|dblclick|mouse(?:down|up|over|move|out))$/}; "
+						+ "simulate(arguments[0],\"mousedown\",0,0); simulate(arguments[0],\"mousemove\",arguments[1],arguments[2]); simulate(arguments[0],\"mouseup\",arguments[1],arguments[2]); ",
+				LocatorFrom1, x1to, y1to);
+		Thread.sleep(2000);
+		System.out.println("SMS to email connected");
+
+		WebElement LocatorFrom2 = Mailtohangup1;
+		WebElement LocatorTo2 = hangup1;
+		String x2to = Integer.toString(LocatorTo2.getLocation().x);
+		String y2to = Integer.toString(LocatorTo2.getLocation().y);
+		((JavascriptExecutor) driver).executeScript(
+				"function simulate(f,c,d,e){var b,a=null;for(b in eventMatchers)if(eventMatchers[b].test(c)){a=b;break}if(!a)return!1;document.createEvent?(b=document.createEvent(a),a==\"HTMLEvents\"?b.initEvent(c,!0,!0):b.initMouseEvent(c,!0,!0,document.defaultView,0,d,e,d,e,!1,!1,!1,!1,0,null),f.dispatchEvent(b)):(a=document.createEventObject(),a.detail=0,a.screenX=d,a.screenY=e,a.clientX=d,a.clientY=e,a.ctrlKey=!1,a.altKey=!1,a.shiftKey=!1,a.metaKey=!1,a.button=1,f.fireEvent(\"on\"+c,a));return!0} var eventMatchers={HTMLEvents:/^(?:load|unload|abort|error|select|change|submit|reset|focus|blur|resize|scroll)$/,MouseEvents:/^(?:click|dblclick|mouse(?:down|up|over|move|out))$/}; "
+						+ "simulate(arguments[0],\"mousedown\",0,0); simulate(arguments[0],\"mousemove\",arguments[1],arguments[2]); simulate(arguments[0],\"mouseup\",arguments[1],arguments[2]); ",
+				LocatorFrom2, x2to, y2to);
+		Thread.sleep(2000);
+		System.out.println("emailwidget to hang up 1 connected");
+
+		WebElement LocatorFrom3 = senMailhangup2;
+		WebElement LocatorTo3 = hangup2;
+		String x3to = Integer.toString(LocatorTo3.getLocation().x);
+		String y3to = Integer.toString(LocatorTo3.getLocation().y);
+		((JavascriptExecutor) driver).executeScript(
+				"function simulate(f,c,d,e){var b,a=null;for(b in eventMatchers)if(eventMatchers[b].test(c)){a=b;break}if(!a)return!1;document.createEvent?(b=document.createEvent(a),a==\"HTMLEvents\"?b.initEvent(c,!0,!0):b.initMouseEvent(c,!0,!0,document.defaultView,0,d,e,d,e,!1,!1,!1,!1,0,null),f.dispatchEvent(b)):(a=document.createEventObject(),a.detail=0,a.screenX=d,a.screenY=e,a.clientX=d,a.clientY=e,a.ctrlKey=!1,a.altKey=!1,a.shiftKey=!1,a.metaKey=!1,a.button=1,f.fireEvent(\"on\"+c,a));return!0} var eventMatchers={HTMLEvents:/^(?:load|unload|abort|error|select|change|submit|reset|focus|blur|resize|scroll)$/,MouseEvents:/^(?:click|dblclick|mouse(?:down|up|over|move|out))$/}; "
+						+ "simulate(arguments[0],\"mousedown\",0,0); simulate(arguments[0],\"mousemove\",arguments[1],arguments[2]); simulate(arguments[0],\"mouseup\",arguments[1],arguments[2]); ",
+				LocatorFrom3, x3to, y3to);
+		Thread.sleep(2000);
+		System.out.println("emailwidget to hang up 2 connected");
+
+		WebElement LocatorFrom4 = sendSMSHungup1;
+		WebElement LocatorTo4 = hangup3;
+		String x4to = Integer.toString(LocatorTo4.getLocation().x);
+		String y4to = Integer.toString(LocatorTo4.getLocation().y);
+		((JavascriptExecutor) driver).executeScript(
+				"function simulate(f,c,d,e){var b,a=null;for(b in eventMatchers)if(eventMatchers[b].test(c)){a=b;break}if(!a)return!1;document.createEvent?(b=document.createEvent(a),a==\"HTMLEvents\"?b.initEvent(c,!0,!0):b.initMouseEvent(c,!0,!0,document.defaultView,0,d,e,d,e,!1,!1,!1,!1,0,null),f.dispatchEvent(b)):(a=document.createEventObject(),a.detail=0,a.screenX=d,a.screenY=e,a.clientX=d,a.clientY=e,a.ctrlKey=!1,a.altKey=!1,a.shiftKey=!1,a.metaKey=!1,a.button=1,f.fireEvent(\"on\"+c,a));return!0} var eventMatchers={HTMLEvents:/^(?:load|unload|abort|error|select|change|submit|reset|focus|blur|resize|scroll)$/,MouseEvents:/^(?:click|dblclick|mouse(?:down|up|over|move|out))$/}; "
+						+ "simulate(arguments[0],\"mousedown\",0,0); simulate(arguments[0],\"mousemove\",arguments[1],arguments[2]); simulate(arguments[0],\"mouseup\",arguments[1],arguments[2]); ",
+				LocatorFrom4, x4to, y4to);
+		Thread.sleep(2000);
+		System.out.println("smsWidget to hang up 3 connected");
+
+	}
+
+	public void dragdrops(WebElement from, WebElement to) throws InterruptedException, AWTException {
+		WebElement LocatorFrom = from;
+		WebElement LocatorTo = to;
+		Robot robot = new Robot();
+		robot.setAutoDelay(50);
+		String xto = Integer.toString(LocatorTo.getLocation().x);
+		String yto = Integer.toString(LocatorTo.getLocation().y);
+		((JavascriptExecutor) driver).executeScript(
+				"function simulate(f,c,d,e){var b,a=null;for(b in eventMatchers)if(eventMatchers[b].test(c)){a=b;break}if(!a)return!1;document.createEvent?(b=document.createEvent(a),a==\"HTMLEvents\"?b.initEvent(c,!0,!0):b.initMouseEvent(c,!0,!0,document.defaultView,0,d,e,d,e,!1,!1,!1,!1,0,null),f.dispatchEvent(b)):(a=document.createEventObject(),a.detail=0,a.screenX=d,a.screenY=e,a.clientX=d,a.clientY=e,a.ctrlKey=!1,a.altKey=!1,a.shiftKey=!1,a.metaKey=!1,a.button=1,f.fireEvent(\"on\"+c,a));return!0} var eventMatchers={HTMLEvents:/^(?:load|unload|abort|error|select|change|submit|reset|focus|blur|resize|scroll)$/,MouseEvents:/^(?:click|dblclick|mouse(?:down|up|over|move|out))$/}; "
+						+ "simulate(arguments[0],\"mousedown\",0,0); simulate(arguments[0],\"mousemove\",arguments[1],arguments[2]); simulate(arguments[0],\"mouseup\",arguments[1],arguments[2]); ",
+				LocatorFrom, xto, yto);
+		System.out.println("Drag and dropped");
+		Thread.sleep(2000);
 	}
 
 }
