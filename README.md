@@ -1,9 +1,10 @@
-# Plivo-assignment for UI Automation
+# UI Automation, Focusing on complex drag and drop features.
 
 #System must have maven installed
 
+```
   git clone <https://github.com/YasirKotwal/QuickFuseAutomation.git>
-
+```
 The project is builed to run on linux flatform
 
 #How To Run
