@@ -3,7 +3,7 @@
 ## System must have maven installed
 
 ```
-  git clone <https://github.com/YasirKotwal/QuickFuseAutomation.git>
+  git clone <https://github.com/YasirKotwal/AutomationUI-CustomizeReport.git>
 ```
 The project is builed to run on linux flatform
 
