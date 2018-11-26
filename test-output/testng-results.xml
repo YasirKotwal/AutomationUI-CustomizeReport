@@ -1,101 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="31477" started-at="2018-11-11T12:11:00Z" finished-at="2018-11-11T12:11:31Z">
+  <suite name="Suite" duration-ms="37939" started-at="2018-11-26T16:35:41Z" finished-at="2018-11-26T16:36:19Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="31477" started-at="2018-11-11T12:11:00Z" finished-at="2018-11-11T12:11:31Z">
+    <test name="Test" duration-ms="37939" started-at="2018-11-26T16:35:41Z" finished-at="2018-11-26T16:36:19Z">
       <class name="tests.Very_Home_Page">
-        <test-method status="PASS" signature="setup()[pri:0, instance:tests.Very_Home_Page@343f4d3d]" name="setup" is-config="true" duration-ms="6772" started-at="2018-11-11T12:11:00Z" finished-at="2018-11-11T12:11:07Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:tests.Very_Home_Page@343f4d3d]" name="setup" is-config="true" duration-ms="13650" started-at="2018-11-26T16:35:41Z" finished-at="2018-11-26T16:35:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="startCreatingQuickFuseApp()[pri:0, instance:tests.Very_Home_Page@343f4d3d]" name="startCreatingQuickFuseApp" duration-ms="19587" started-at="2018-11-11T12:11:07Z" finished-at="2018-11-11T12:11:26Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='module-2']//*[@class='syn-receptor ui-droppable syn-receptor-north ui-draggable syn-receptor-draggable']"}
-  (Session info: chrome=70.0.3538.77)
-  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Linux 4.4.0-138-generic x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'administrator-Latitude-E5570', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.0-138-generic', java.version: '1.8.0_181'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.38.552522 (437e6fbedfa876..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 70.0.3538.77, webStorageEnabled: true}
-Session ID: 6cf1e271dfe4d743a9283bf3dfe72e6e
-*** Element info: {Using=xpath, value=//div[@id='module-2']//*[@class='syn-receptor ui-droppable syn-receptor-north ui-draggable syn-receptor-draggable']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='module-2']//*[@class='syn-receptor ui-droppable syn-receptor-north ui-draggable syn-receptor-draggable']"}
-  (Session info: chrome=70.0.3538.77)
-  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Linux 4.4.0-138-generic x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'administrator-Latitude-E5570', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.0-138-generic', java.version: '1.8.0_181'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.38.552522 (437e6fbedfa876..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 70.0.3538.77, webStorageEnabled: true}
-Session ID: 6cf1e271dfe4d743a9283bf3dfe72e6e
-*** Element info: {Using=xpath, value=//div[@id='module-2']//*[@class='syn-receptor ui-droppable syn-receptor-north ui-draggable syn-receptor-draggable']}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy9.getCoordinates(Unknown Source)
-at org.openqa.selenium.interactions.internal.MouseAction.getActionLocation(MouseAction.java:66)
-at org.openqa.selenium.interactions.internal.MouseAction.moveToLocation(MouseAction.java:73)
-at org.openqa.selenium.interactions.ButtonReleaseAction.perform(ButtonReleaseAction.java:46)
-at org.openqa.selenium.interactions.CompositeAction.perform(CompositeAction.java:34)
-at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:643)
-at pages.HomePage.connectWidgets(HomePage.java:219)
-at tests.Very_Home_Page.startCreatingQuickFuseApp(Very_Home_Page.java:43)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method status="PASS" signature="startCreatingQuickFuseApp()[pri:0, instance:tests.Very_Home_Page@343f4d3d]" name="startCreatingQuickFuseApp" duration-ms="19176" started-at="2018-11-26T16:35:55Z" finished-at="2018-11-26T16:36:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startCreatingQuickFuseApp -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.Very_Home_Page@343f4d3d]" name="tearDown" is-config="true" duration-ms="5078" started-at="2018-11-11T12:11:26Z" finished-at="2018-11-11T12:11:31Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.Very_Home_Page@343f4d3d]" name="tearDown" is-config="true" duration-ms="5083" started-at="2018-11-26T16:36:14Z" finished-at="2018-11-26T16:36:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
