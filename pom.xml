@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>automation</groupId>
-  <artifactId>PlivoAssignment</artifactId>
+  <artifactId>UIAutomation</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>PlivoAssignment</name>
+  <name>UIAutomation</name>
   <url>http://maven.apache.org</url>
 
   <properties>
